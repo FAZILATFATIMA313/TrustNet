@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustNet AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; width: 300px; padding: 10px; }
+    button { padding: 10px; margin: 5px 0; width: 100%; }
+    #url { margin-bottom: 10px; }
+    .risk-low { color: green; }
+    .risk-medium { color: orange; }
+    .risk-high { color: red; }
+    h4 { margin-top: 15px; margin-bottom: 5px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <h3>TrustNet AI</h3>
+  <div id="url">Current URL: <span id="current-url">Loading...</span></div>
+  <button id="scan-page">Scan Page</button>
+  <div id="results" style="display: none;">
+    <h4>Page Analysis</h4>
+    <div><strong>Page Type:</strong> <span id="page-type"></span></div>
+
+    <h4>URL Risk</h4>
+    <div><strong>Risk Level:</strong> <span id="url-risk"></span></div>
+    <div id="url-reasons"></div>
+
+    <h4>Content Signals</h4>
+    <div><strong>Return Policy:</strong> <span id="return-policy"></span></div>
+    <div><strong>Contact Info:</strong> <span id="contact-info"></span></div>
+    <div><strong>About Us:</strong> <span id="about-us"></span></div>
+    <div><strong>Shipping:</strong> <span id="shipping"></span></div>
+    <div><strong>Urgency Language:</strong> <span id="urgency"></span></div>
+
+    <h4>Risk Assessment</h4>
+    <div><strong>Scam Probability:</strong> <span id="probability"></span></div>
+    <div><strong>Risk Level:</strong> <span id="risk-level"></span></div>
+    <div><strong>Top Reasons:</strong></div>
+    <ul id="reasons-list"></ul>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
