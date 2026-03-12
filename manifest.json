@@ -1,24 +1,38 @@
 {
   "manifest_version": 3,
-  "name": "TrustNet AI",
-  "version": "1.0",
-  "description": "Protects users from fake online sellers and digital scams.",
+  "name": "TrustNet",
+  "version": "2.1",
+  "description": "AI-Powered scam detection with phishing ML + sentiment analysis for e-commerce protection.",
   "permissions": [
     "activeTab",
     "storage",
-    "scripting"
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "TrustNet AI"
+    "default_title": "TrustNet"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["utils.js", "ml-utils.js", "advanced-analysis.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
     }
   ],
   "background": {
-    "service_worker": "background.js"
-  }
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["settings.html", "styles.css", "utils.js", "ml-utils.js", "Logo.jpeg"],
+      "matches": ["chrome-extension://*/*"]
+    }
+  ]
 }
