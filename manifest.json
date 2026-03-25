@@ -1,24 +1,8 @@
 {
   "manifest_version": 3,
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "name": "TrustNet AI",
-  "version": "1.0",
-  "description": "Protects users from fake online sellers and digital scams.",
-  "permissions": [
-    "activeTab",
-    "storage",
-    "scripting"
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "TrustNet AI"
-=======
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
   "name": "TrustNet",
-  "version": "2.1",
-  "description": "AI-Powered scam detection with phishing ML + sentiment analysis for e-commerce protection.",
+  "version": "2.1.0",
+  "description": "AI-Powered scam detection with phishing ML + sentiment analysis",
   "permissions": [
     "activeTab",
     "storage",
@@ -32,26 +16,16 @@
   "action": {
     "default_popup": "popup.html",
     "default_title": "TrustNet"
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "js": ["content.js"]
-    }
-  ],
-  "background": {
-    "service_worker": "background.js"
-  }
-=======
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
-      "js": ["utils.js", "ml-utils.js", "advanced-analysis.js", "content.js"],
+      "js": [
+        "utils.js",
+        "ml-utils.js", 
+        "advanced-analysis.js",
+        "content.js"
+      ],
       "css": ["styles.css"],
       "run_at": "document_idle"
     }
@@ -62,12 +36,14 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["settings.html", "styles.css", "utils.js", "ml-utils.js", "Logo.jpeg"],
+      "resources": [
+        "settings.html",
+        "styles.css",
+        "Logo.jpeg",
+        "utils.js",
+        "ml-utils.js"
+      ],
       "matches": ["chrome-extension://*/*"]
     }
   ]
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
 }
