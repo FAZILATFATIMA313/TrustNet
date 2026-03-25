@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustNet - Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f3f4f6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container img {
+            height: 80px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .header p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card h2 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .permission-list {
+            list-style: none;
+        }
+        
+        .permission-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background 0.2s;
+        }
+        
+        .permission-item:last-child {
+            border-bottom: none;
+        }
+        
+        .permission-item:hover {
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .permission-info h4 {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 4px;
+        }
+        
+        .permission-info p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        .permission-status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-allowed {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status-denied {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .status-ask {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status-checkout {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-danger {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .btn-danger:hover {
+            background: #fecaca;
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #9ca3af;
+        }
+        
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .privacy-section {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .privacy-section h2 {
+            color: #166534;
+        }
+        
+        .privacy-list {
+            list-style: none;
+            font-size: 14px;
+            color: #374151;
+        }
+        
+        .privacy-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .privacy-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        .actions-bar {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .stat-box {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+            outline: none;
+        }
+        
+        .toggle-switch:focus {
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+        }
+        
+        .toggle-switch.active {
+            background: #22c55e;
+        }
+        
+        .toggle-switch::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toggle-switch.active::after {
+            transform: translateX(24px);
+        }
+
+        
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .setting-row:last-child {
+            border-bottom: none;
+        }
+        
+        .setting-info h4 {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 4px;
+        }
+        
+        .setting-info p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="Logo.jpeg" alt="TrustNet Logo">
+        </div>
+        <div class="header">
+            <h1>🛡️ TrustNet Settings</h1>
+            <p>Manage your privacy and site permissions</p>
+        </div>
+        
+        <!-- Stats Overview -->
+        <div class="card">
+            <h2>📊 Scan Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number" id="total-scans">0</div>
+                    <div class="stat-label">Total Scans</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="high-risk-detected">0</div>
+                    <div class="stat-label">High Risk Detected</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="sites-protected">0</div>
+                    <div class="stat-label">Sites Protected</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Global Settings -->
+        <div class="card">
+            <h2>⚙️ Global Settings</h2>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Auto-scan on navigation</h4>
+                    <p>Automatically scan when you navigate to a new page</p>
+                </div>
+                <div class="toggle-switch active" id="toggle-auto-scan" role="switch" aria-checked="true" tabindex="0" aria-label="Auto-scan on navigation"></div>
+
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Show safe site badge</h4>
+                    <p>Display a compact badge for low-risk sites</p>
+                </div>
+                <div class="toggle-switch active" id="toggle-safe-badge" role="switch" aria-checked="true" tabindex="0" aria-label="Show safe site badge"></div>
+
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Checkout confirmation</h4>
+                    <p>Always ask before enhanced checkout scanning</p>
+                </div>
+                <div class="toggle-switch active" id="toggle-checkout-confirm" role="switch" aria-checked="true" tabindex="0" aria-label="Checkout confirmation"></div>
+
+            </div>
+        </div>
+        
+        <!-- Site Permissions -->
+        <div class="card">
+            <h2>🔐 Site Permissions</h2>
+            <ul class="permission-list" id="permission-list">
+                <li class="empty-state">
+                    <div class="empty-state-icon">🔍</div>
+                    <p>No site permissions yet. Visit a website to start scanning.</p>
+                </li>
+            </ul>
+            <div class="actions-bar">
+                <button class="btn btn-danger" id="clear-all-permissions">Clear All Permissions</button>
+            </div>
+        </div>
+        
+        <!-- Privacy Notice -->
+        <div class="card privacy-section">
+            <h2>🔒 Your Privacy</h2>
+            <ul class="privacy-list">
+                <li>TrustNet scans only visible web page content (public text, links, and images)</li>
+                <li>It does not access passwords, OTPs, card details, UPI PIN, cookies, or autofill</li>
+                <li>Scan runs locally in your browser; no third party receives your credentials</li>
+                <li>Enhanced checkout scanning never reads payment form inputs</li>
+                <li>All data stays on your device unless you explicitly choose to share</li>
+            </ul>
+        </div>
+        
+        <!-- Reset Options -->
+        <div class="card">
+            <h2>🔄 Reset Options</h2>
+            <div class="actions-bar">
+                <button class="btn btn-secondary" id="reset-stats">Reset Statistics</button>
+                <button class="btn btn-secondary" id="reset-cache">Clear Scan Cache</button>
+                <button class="btn btn-danger" id="reset-all">Reset All Data</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="settings.js"></script>
+</body>
+</html>

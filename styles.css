@@ -1,0 +1,1188 @@
+/* TrustNet - Shared Styles */
+
+/* Permission Bar - Top Right */
+.trustnet-permission-bar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 2147483647;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 420px;
+    min-width: 320px;
+    overflow: hidden;
+}
+
+.trustnet-permission-bar.trustnet-permission-bar-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.trustnet-permission-bar-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+}
+
+.trustnet-permission-bar-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.trustnet-permission-bar-text {
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 600;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.trustnet-permission-bar-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.trustnet-permission-bar-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+/* Focus visibility for accessibility */
+.trustnet-permission-bar-btn:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.trustnet-permission-bar-allow {
+    background: #22c55e;
+    color: white;
+}
+
+.trustnet-permission-bar-allow:hover {
+    background: #16a34a;
+    transform: scale(1.02);
+}
+
+.trustnet-permission-bar-deny {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.trustnet-permission-bar-deny:hover {
+    background: #e5e7eb;
+    transform: scale(1.02);
+}
+
+.trustnet-permission-bar-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+.trustnet-permission-bar-close:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.trustnet-permission-bar-progress {
+    height: 3px;
+    background: #e5e7eb;
+    width: 100%;
+}
+
+.trustnet-permission-bar-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    width: 100%;
+    transition: width 0.1s linear;
+}
+
+/* Soft Entry Badge - NEW */
+.trustnet-soft-badge {
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 50px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 2147483645;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 320px;
+}
+
+.trustnet-soft-badge.trustnet-badge-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.trustnet-badge-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trustnet-badge-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.trustnet-badge-text {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.trustnet-badge-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.trustnet-badge-btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.trustnet-badge-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+.trustnet-badge-close:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Confidence Indicator - NEW */
+.trustnet-confidence {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.trustnet-confidence-high {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.trustnet-confidence-medium {
+    background: #fffbeb;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.trustnet-confidence-low {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.trustnet-confidence-icon {
+    font-size: 14px;
+}
+
+/* Evidence Items - Enhanced */
+.trustnet-evidence-positive {
+    color: #166534;
+    background: #f0fdf4;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-left: 3px solid #22c55e;
+}
+
+.trustnet-evidence-negative {
+    color: #991b1b;
+    background: #fef2f2;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-left: 3px solid #ef4444;
+}
+
+.trustnet-evidence-positive::before {
+    content: "✓";
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.trustnet-evidence-negative::before {
+    content: "⚠";
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Module Scores Display - NEW */
+.trustnet-modules {
+    margin-bottom: 16px;
+}
+
+.trustnet-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trustnet-module:last-child {
+    border-bottom: none;
+}
+
+.trustnet-module-name {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 500;
+}
+
+.trustnet-module-bar {
+    flex: 1;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    margin: 0 12px;
+    overflow: hidden;
+}
+
+.trustnet-module-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.trustnet-module-fill-low {
+    background: #22c55e;
+}
+
+.trustnet-module-fill-medium {
+    background: #f59e0b;
+}
+
+.trustnet-module-fill-high {
+    background: #ef4444;
+}
+
+.trustnet-module-score {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    min-width: 28px;
+    text-align: right;
+}
+
+/* Permission Overlay */
+.trustnet-permission-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2147483646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.trustnet-permission-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: trustnet-slide-in 0.3s ease-out;
+}
+
+@keyframes trustnet-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trustnet-permission-card h3 {
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.trustnet-permission-card p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.trustnet-permission-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.trustnet-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+    min-width: 100px;
+}
+
+.trustnet-btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.trustnet-btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.trustnet-btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.trustnet-btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+.trustnet-btn-text {
+    background: transparent;
+    color: #6b7280;
+    text-decoration: underline;
+}
+
+.trustnet-btn-text:hover {
+    color: #374151;
+}
+
+/* Privacy Notice */
+.trustnet-privacy-notice {
+    margin-top: 16px;
+    padding: 12px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    border-left: 3px solid #22c55e;
+}
+
+.trustnet-privacy-notice p {
+    margin: 0;
+    font-size: 12px;
+    color: #166534;
+}
+
+/* Results Overlay */
+.trustnet-results-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 380px;
+    max-height: 80vh;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+    z-index: 2147483647;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    animation: trustnet-fade-in 0.3s ease-out;
+}
+
+@keyframes trustnet-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.trustnet-results-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trustnet-results-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trustnet-close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 4px;
+    line-height: 1;
+}
+
+.trustnet-close-btn:hover {
+    color: #374151;
+}
+
+.trustnet-results-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(80vh - 60px);
+}
+
+/* Risk Score Display */
+.trustnet-risk-score {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trustnet-score-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.trustnet-score-low {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.trustnet-score-medium {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.trustnet-score-high {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.trustnet-risk-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trustnet-risk-low { color: #16a34a; }
+.trustnet-risk-medium { color: #d97706; }
+.trustnet-risk-high { color: #dc2626; }
+
+/* Zone Breakdown */
+.trustnet-zones {
+    margin-bottom: 20px;
+}
+
+.trustnet-zone {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid;
+}
+
+.trustnet-zone-low {
+    background: #f0fdf4;
+    border-left-color: #22c55e;
+}
+
+.trustnet-zone-medium {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+}
+
+.trustnet-zone-high {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+}
+
+.trustnet-zone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.trustnet-zone-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: #374151;
+}
+
+.trustnet-zone-score {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.trustnet-zone-reasons {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+    padding-left: 16px;
+}
+
+.trustnet-zone-reasons li {
+    margin-bottom: 2px;
+}
+
+/* Evidence Section */
+.trustnet-evidence {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.trustnet-evidence h4 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    color: #374151;
+}
+
+.trustnet-evidence-item {
+    font-size: 12px;
+    color: #6b7280;
+    padding: 4px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trustnet-evidence-item:last-child {
+    border-bottom: none;
+}
+
+/* Action Buttons */
+.trustnet-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.trustnet-action-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trustnet-action-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+/* Safe Badge (Compact) */
+.trustnet-safe-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 50px;
+    padding: 10px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #16a34a;
+    z-index: 2147483645;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trustnet-safe-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.trustnet-safe-badge::before {
+    content: "✓";
+    width: 20px;
+    height: 20px;
+    background: #22c55e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Checkout Permission Gate */
+.trustnet-checkout-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2147483647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.trustnet-checkout-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    animation: trustnet-slide-in 0.3s ease-out;
+}
+
+.trustnet-checkout-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.trustnet-checkout-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.trustnet-checkout-card p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.trustnet-enhanced-list {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.trustnet-enhanced-list h4 {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    color: #374151;
+}
+
+.trustnet-enhanced-list ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.trustnet-enhanced-list li {
+    margin-bottom: 6px;
+}
+
+.trustnet-privacy-lock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #166534;
+}
+
+/* Warning Banner (Updated) */
+#trustnet-warning-banner {
+    background: linear-gradient(90deg, #ef4444, #dc2626) !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    font-size: 14px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 2147483647 !important;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3) !important;
+}
+
+#trustnet-close-banner {
+    background: white !important;
+    color: #dc2626 !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: all 0.2s !important;
+}
+
+#trustnet-close-banner:hover {
+    background: #fef2f2 !important;
+    transform: scale(1.05) !important;
+}
+
+/* Scrollbar Styling */
+.trustnet-results-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.trustnet-results-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.trustnet-results-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.trustnet-results-content::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Loading State */
+.trustnet-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.trustnet-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e7eb;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: trustnet-spin 1s linear infinite;
+}
+
+@keyframes trustnet-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Enhanced Permission Card Styles */
+.trustnet-permission-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.trustnet-shield-icon {
+    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border-radius: 12px;
+}
+
+.trustnet-permission-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.trustnet-permission-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.trustnet-privacy-box {
+    background: #f0fdf4;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-left: 4px solid #22c55e;
+}
+
+.trustnet-privacy-title {
+    font-weight: 600;
+    color: #166534;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.trustnet-privacy-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.trustnet-privacy-list li {
+    margin-bottom: 4px;
+}
+
+/* Checkout Permission Card Styles */
+.trustnet-checkout-permission-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    animation: trustnet-slide-in 0.3s ease-out;
+}
+
+.trustnet-checkout-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.trustnet-checkout-icon {
+    font-size: 32px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 12px;
+}
+
+.trustnet-checkout-header h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #1a1a1a;
+}
+
+.trustnet-checkout-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.trustnet-enhanced-features {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.trustnet-enhanced-features h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.trustnet-enhanced-features ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.trustnet-enhanced-features li {
+    margin-bottom: 6px;
+}
+
+.trustnet-privacy-lock-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: 12px;
+    border: 2px solid #22c55e;
+}
+
+.trustnet-lock-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.trustnet-lock-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.trustnet-lock-text strong {
+    color: #166534;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.trustnet-lock-text span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .trustnet-results-overlay {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+    }
+    
+    .trustnet-permission-card,
+    .trustnet-checkout-card,
+    .trustnet-checkout-permission-card {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .trustnet-soft-badge {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+    
+    .trustnet-badge-text {
+        white-space: normal;
+        flex: 1;
+    }
+}
+
+/* ==================== RISK BADGE (Minimal) ==================== */
+.trustnet-risk-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2147483645;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.trustnet-risk-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.trustnet-badge-score {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.trustnet-badge-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.trustnet-badge-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.2;
+}
+
+.trustnet-badge-type {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.2;
+}
+
+.trustnet-badge-faded {
+    opacity: 0.7;
+}
+
+/* ==================== ANALYSIS PANEL (Dropdown) ==================== */
+.trustnet-analysis-panel {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    max-height: 60vh;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    z-index: 2147483646;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    overflow: hidden;
+}
+
+.trustnet-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.trustnet-panel-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #9ca3af;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.trustnet-panel-close:hover {
+    color: #374151;
+}
+
+.trustnet-panel-content {
+    padding: 16px;
+    overflow-y: auto;
+    max-height: calc(60vh - 60px);
+}
+
+.trustnet-panel-score {
+    text-align: center;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.trustnet-score-value {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.trustnet-score-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.trustnet-panel-section {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.trustnet-panel-section ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.trustnet-panel-section li {
+    padding: 4px 0;
+    color: #6b7280;
+}

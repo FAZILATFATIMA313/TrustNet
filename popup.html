@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,408 @@
   <div id="url">Current URL: <span id="current-url">Loading...</span></div>
   <button id="scan-page">Scan Page</button>
   <div id="results" style="display: none;">
+=======
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustNet</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      width: 340px;
+      max-width: 100%;
+      padding: 16px;
+      background: #f8fafc;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .logo-container img {
+      height: 60px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo-hidden {
+      display: none !important;
+    }
+
+    #url {
+      margin-bottom: 16px;
+      padding: 10px 12px;
+      background: white;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+    }
+
+    #current-url {
+      color: #0f172a;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    button {
+      display: block;
+      padding: 12px 16px;
+      margin: 8px 0;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      color: white;
+      background: #2563eb;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Focus visibility for accessibility */
+    button:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    #scan-page {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+    }
+
+    #scan-page:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    }
+
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Chat Analysis Section */
+    .chat-section {
+      background: #f0f9ff;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+      border: 1px solid #bae6fd;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .chat-section h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .chat-section textarea {
+      width: 100%;
+      height: 80px;
+      padding: 8px;
+      border: 1px solid #bae6fd;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+      resize: vertical;
+      background: white;
+      box-sizing: border-box;
+    }
+
+    .chat-section textarea:focus {
+      outline: none;
+      border-color: #0284c7;
+      background: #f8fcff;
+    }
+
+    .chat-section button {
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      background: #0284c7;
+    }
+
+    .chat-section button:hover {
+      background: #0369a1;
+    }
+
+    .chat-section #chat-result {
+      margin-top: 8px !important;
+      padding: 8px !important;
+      background: #e0f2fe !important;
+      border-left: 3px solid #0284c7 !important;
+      display: none;
+    }
+
+    .chat-section #chat-result.active {
+      display: block;
+    }
+
+    .chat-section #chat-reasons li {
+      font-size: 11px;
+      padding: 2px 0;
+      border: none;
+      background: transparent;
+      margin: 0;
+    }
+
+    .chat-section #chat-risk {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    #safe-advice {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .results-hidden {
+      display: none;
+    }
+
+    svg.svg-icon {
+      flex-shrink: 0;
+    }
+
+    .chat-section h4::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    #chat-input {
+      width: 100%;
+      height: 100px;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      resize: none;
+      transition: border-color 0.2s;
+      background: #fafafa;
+    }
+
+    #chat-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      background: white;
+    }
+
+    #chat-input::placeholder {
+      color: #94a3b8;
+    }
+
+    #analyze-chat {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: white;
+      margin-top: 12px;
+    }
+
+    #analyze-chat:hover {
+      background: linear-gradient(135deg, #047857, #065f46);
+    }
+
+    #chat-result {
+      margin-top: 16px;
+      padding: 16px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+
+    #chat-result strong {
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    #chat-risk {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .risk-low {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .risk-medium {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .risk-high {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    #chat-reasons {
+      margin-top: 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    #chat-reasons li {
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      background: white;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #64748b;
+      border-left: 3px solid #ef4444;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #chat-reasons li::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .safe-good {
+      color: #059669;
+      font-weight: 600;
+    }
+
+    .safe-bad {
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    .safe-warn {
+      color: #d97706;
+      font-weight: 600;
+    }
+
+    /* Results Section */
+    #results {
+      margin-top: 20px;
+      padding: 16px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    #results h4 {
+      margin-top: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    #results h4:first-child {
+      margin-top: 0;
+    }
+
+    #safe-checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 12px;
+    }
+
+    #safe-checklist li {
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      border-radius: 8px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    #safe-checklist li:hover {
+      background: #f1f5f9;
+    }
+
+    #safe-advice {
+      margin-top: 12px;
+      padding: 12px;
+      background: #eff6ff;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1e40af;
+      border-left: 3px solid #3b82f6;
+    }
+
+    div[id$="-risk"], div[id$="-policy"], div[id$="-info"], div[id$="-us"], div[id$="shipping"], div[id$="urgency"], div[id="probability"], div[id="risk-level"] {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="logo-container" id="logo-container">
+    <img id="logo-img" alt="TrustNet Logo" class="logo-hidden">
+  </div>
+  <h3>TrustNet</h3>
+  <div id="url">Current URL: <span id="current-url">Loading...</span></div>
+  <button id="scan-page">↻ Refresh Analysis</button>
+
+  <!-- Results section (auto-displays on popup load) -->
+  <div id="results" class="results-hidden">
+>>>>>>> origin/master
     <h4>Page Analysis</h4>
     <div><strong>Page Type:</strong> <span id="page-type"></span></div>
 
@@ -34,12 +437,90 @@
     <div><strong>Shipping:</strong> <span id="shipping"></span></div>
     <div><strong>Urgency Language:</strong> <span id="urgency"></span></div>
 
+<<<<<<< HEAD
+=======
+    <h4>Payment Risk</h4>
+    <div><strong>Risk Level:</strong> <span id="payment-risk"></span></div>
+    <div id="payment-reasons"></div>
+
+    <h4>Safe Shopping Mode</h4>
+
+<ul id="safe-checklist">
+  <li id="check-return">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+      <path d="M3 3v5h5"></path>
+    </svg>
+    Return policy not verified
+  </li>
+  <li id="check-contact">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+    Seller contact not verified
+  </li>
+  <li id="check-payment">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+      <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+      <line x1="2" x2="22" y1="10" y2="10"></line>
+    </svg>
+    Secure payment not verified
+  </li>
+  <li id="check-urgency">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    No urgency pressure detected
+  </li>
+</ul>
+
+<div id="safe-advice"></div>
+
+>>>>>>> origin/master
     <h4>Risk Assessment</h4>
     <div><strong>Scam Probability:</strong> <span id="probability"></span></div>
     <div><strong>Risk Level:</strong> <span id="risk-level"></span></div>
     <div><strong>Top Reasons:</strong></div>
     <ul id="reasons-list"></ul>
+<<<<<<< HEAD
   </div>
   <script src="popup.js"></script>
 </body>
+=======
+
+    <!-- ML Scores Section -->
+    <h4>🤖 AI Analysis</h4>
+    <div class="ml-scores-grid">
+      <div class="ml-score-card">
+        <div class="score-label">Phishing Risk</div>
+        <div class="score-value" id="phishing-score">0%</div>
+        <div class="score-bar">
+          <div class="score-fill low" id="phishing-bar"></div>
+        </div>
+      </div>
+      <div class="ml-score-card">
+        <div class="score-label">Sentiment</div>
+        <div class="score-value" id="sentiment-score">Neutral</div>
+        <div class="sentiment-indicator neutral" id="sentiment-indicator"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compact Chat Analysis Section -->
+  <div class="chat-section">
+    <h4>💬 Seller Chat Analysis</h4>
+    <textarea id="chat-input" placeholder="Paste seller chat messages here..."></textarea>
+    <button id="analyze-chat">🔍 Analyze Chat</button>
+
+    <div id="chat-result">
+      <strong>Risk Level:</strong> <span id="chat-risk"></span>
+      <strong>Sentiment:</strong> <span id="chat-sentiment"></span>
+      <ul id="chat-reasons"></ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+>>>>>>> origin/master
 </html>
