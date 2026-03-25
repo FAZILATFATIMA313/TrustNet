@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // background.js - Service Worker for TrustNet AI
 // Placeholder for background tasks like handling alarms, network requests, etc.
 
@@ -9,6 +10,8 @@ chrome.runtime.onInstalled.addListener(() => {
 
 // Placeholder for future background logic
 =======
+=======
+>>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
 /**
  * TrustNet - Background Service Worker
  * Handles permission management, Safe Browsing API, domain age lookup, and cross-page learning
@@ -444,4 +447,7 @@ async function getPageNavigationHistory(domain) {
     };
   }
 }
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
