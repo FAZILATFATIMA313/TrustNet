@@ -1,0 +1,4 @@
+*.csv
+phishing_dataset/
+sentiment_dataset/
+attachments/
