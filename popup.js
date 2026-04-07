@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show results
     resultsElement.style.display = 'block';
   }
-=======
   // ---------- CHAT ELEMENTS ----------
   const chatInput = document.getElementById('chat-input');
   const analyzeChatBtn = document.getElementById('analyze-chat');
