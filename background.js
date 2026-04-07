@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // background.js - Service Worker for TrustNet AI
 // Placeholder for background tasks like handling alarms, network requests, etc.
 
@@ -7,8 +6,6 @@ chrome.runtime.onInstalled.addListener(() => {
   console.log('TrustNet AI extension installed');
 });
 
-// Placeholder for future background logic
-=======
 /**
  * TrustNet - Background Service Worker
  * Handles permission management, Safe Browsing API, domain age lookup, and cross-page learning
