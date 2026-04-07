@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-// popup.js
-document.addEventListener('DOMContentLoaded', function() {
-=======
-// popup.js - TrustNet Popup with Context-Aware Display
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
   // ---------- LOAD LOGO ====================
   const logoImg = document.getElementById('logo-img');
@@ -13,12 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   logoImg.classList.remove('logo-hidden');
 
   // ---------- BASIC ELEMENTS ----------
->>>>>>> origin/master
+
   const currentUrlElement = document.getElementById('current-url');
   const scanButton = document.getElementById('scan-page');
   const resultsElement = document.getElementById('results');
 
-<<<<<<< HEAD
   // Get current tab URL
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
     const currentTab = tabs[0];
@@ -605,5 +599,4 @@ document.addEventListener('DOMContentLoaded', function () {
     chatResult.classList.add('active');
   }
 
->>>>>>> origin/master
 });
