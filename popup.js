@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// popup.js
-document.addEventListener('DOMContentLoaded', function() {
-=======
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
-// popup.js - TrustNet Popup with Context-Aware Display
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
   // ---------- LOAD LOGO ====================
   const logoImg = document.getElementById('logo-img');
@@ -16,16 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   logoImg.classList.remove('logo-hidden');
 
   // ---------- BASIC ELEMENTS ----------
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
+
   const currentUrlElement = document.getElementById('current-url');
   const scanButton = document.getElementById('scan-page');
   const resultsElement = document.getElementById('results');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   // Get current tab URL
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
     const currentTab = tabs[0];
@@ -83,9 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show results
     resultsElement.style.display = 'block';
   }
-=======
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
   // ---------- CHAT ELEMENTS ----------
   const chatInput = document.getElementById('chat-input');
   const analyzeChatBtn = document.getElementById('analyze-chat');
@@ -614,8 +598,4 @@ document.addEventListener('DOMContentLoaded', function () {
     chatResult.classList.add('active');
   }
 
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> 77e72c9f4ba7df703ffc2fdb1d304702c7f942b2
 });
